@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Producto } from "./producto/producto";
+import {MiPerfil} from './mi-perfil/mi-perfil';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [Producto, MiPerfil],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

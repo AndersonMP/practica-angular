@@ -1,0 +1,32 @@
+div {
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fffefe;
+    border: 1px solid #3107eb;
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+p {
+    margin: 0;
+    color: #383838;
+}
+
+strong {
+    color: #000;
+}
