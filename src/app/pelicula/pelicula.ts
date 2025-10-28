@@ -8,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class Pelicula {
 
+  constructor() {
+
+  }
+
+  ngOnInit() {
+    console.log("El componente de película está arrancando.")
+  }
+
+  ngOnDestroy() {
+    console.log("El componente de película ha sido eliminado.")
+  }
 }

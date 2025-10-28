@@ -1,15 +1,39 @@
 <div>
     <h1>Mi Perfil</h1>
     <ul>
-        <li><p>Mi nombres es <strong>{{nombre}}</strong></p></li>
-        <li><p>Tengo <strong>{{edad}}</strong> años.</p></li>
-        <li><p>Soy <strong>{{ocupacion}}</strong></p></li>
-        <li><p>Mi dirección es <strong>{{direccion}}</strong></p></li>
-        <li><p>Mi teléfono es <strong>{{telefono}}</strong></p></li>
+        <li>
+            <p>Mi nombres es <strong>{{nombre}}</strong></p>
+        </li>
+        <li>
+            <p>Tengo <strong>{{edad}}</strong> años.</p>
+        </li>
+        <li>
+            <p>Soy <strong>{{ocupacion}}</strong></p>
+        </li>
+        <li>
+            <p>Mi dirección es <strong>{{direccion}}</strong></p>
+        </li>
+        <li>
+            <p>Mi teléfono es <strong>{{telefono}}</strong></p>
+        </li>
     </ul>
 
 </div>
+<button (click)="cambiarEdad()">Cambiar edad</button>
+<br><br>
+<button (click)="cambiarDireccion()">Cambiar dirección</button>
+<br><br>
 
-<app-cuenta></app-cuenta>
+@if (mostrarCuenta){
+    <button (click)="ocultarComponenteCuenta()">Ocultar componente de cuenta</button>
+} @else {
+    <button (click)="mostrarComponenteCuenta()">Mostrar componente de cuenta</button>
+}
+<br />
+
+@if (mostrarCuenta) {
+    <app-cuenta></app-cuenta>
+}
+
 <app-transacciones></app-transacciones>
 <app-prestamos></app-prestamos>
