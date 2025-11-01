@@ -1,10 +1,7 @@
 <h1>Préstamos</h1>
 
 <p>
-  <a [href]="web"
-     [class.activo]="redirigir"
-     [ngClass]="redirigir ? 'grande' : 'pequeno'"
-     target="_blank">
+  <a [href]="web" [class.activo]="redirigir" [ngClass]="redirigir ? 'grande' : 'pequeno'" target="_blank">
     Ir a mi web
   </a>
 </p>
@@ -17,3 +14,18 @@
 <p>Lo sentimos el enlace no está disponible</p>
 }
 
+<h2>Estado Préstamos</h2>
+
+<ul>
+  @for (prestamo of prestamosList; track $index) {
+  <li>
+    {{prestamo.monto}} -
+    <span [ngClass]="{
+            'aprobado': prestamo.estado === 'Aprobado',
+            'pendiente': prestamo.estado === 'Pendiente'
+      }">
+      {{prestamo.estado}}
+    </span>
+  </li>
+  }
+</ul>

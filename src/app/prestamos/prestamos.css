@@ -25,3 +25,15 @@ a {
   padding: 10px;
   display: inline-block;
 }
+
+.aprobado {
+  color: green;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.pendiente {
+  color: red;
+  padding: 10px;
+  font-weight: bold;
+}
