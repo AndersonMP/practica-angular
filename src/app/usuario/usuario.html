@@ -1,40 +1,56 @@
 <h1>Plantillas en Angular</h1>
 
 <p>{{web}}</p>
-
 <a [href]="web" [class.existe]="redirigir" target="_blank">Ir a mi web</a>
 
 <h2>Estructura de control de flujo</h2>
 <button (click)="cambiarRedireccion()">Cambiar</button>
 
 @if (redirigir) {
-<p>El enlace a {{web}} es correcto !!</p>
+  <p>El enlace a {{web}} es correcto !!</p>
 } @else {
-<p>El enlace no va a funcionar</p>
+  <p>El enlace no va a funcionar</p>
 }
 
 <h3>Marcas Autos</h3>
 <ul>
-    @for ( marca of marcasAutos; track marca.id;
-    let indice = $index,
-    contador = $count,
-    par = $even,
-    impar = $odd ) {
-    <li>{{marca.nombre}} {{impar}}</li>
-    } @empty {
-        <li>El listado está vacío.</li>
-    }
-
+  @for (marca of marcasAutos; track marca.id;
+  let indice = $index,
+  contador = $count,
+  par = $even,
+  impar = $odd) {
+    <li>{{marca.nombre | uppercase}} (Índice: {{indice}})</li>
+  } @empty {
+    <li>El listado está vacío.</li>
+  }
 </ul>
 
 @switch (usuario.rol) {
-    @case ("admin") {
-        <app-ventas></app-ventas>
-    }
-    @case ("user") {
-        <p>Eres un usuario normal</p>
-    }
-    @default {
-        <p>Eres un invitado</p>
-    }
+  @case ("admin") {
+    <app-ventas></app-ventas>
+  }
+  @case ("user") {
+    <p>Eres un usuario normal</p>
+  }
+  @default {
+    <p>Eres un invitado</p>
+  }
 }
+
+<h3>Más cosas de las plantillas Angular</h3>
+<ng-container>
+  <h4>Esto está en un contenedor Angular</h4>
+</ng-container>
+
+@let pais = 'Ecuador ' + (7+7);
+@let saludo = 'Saludos desde ' + pais;
+{{saludo}}
+
+<h2>Tuberías en Angular</h2>
+
+<p><b>UpperCasePipe:</b> {{usuario.nombre | uppercase}}</p>
+<p><b>LowerCasePipe:</b> {{usuario.nick | lowercase}}</p>
+<p><b>TitleCasePipe:</b> {{web | titlecase}}</p>
+<p><b>DatePipe:</b> {{ hoy | date:'fullDate' }}</p>
+<p><b>CurrencyPipe:</b> {{precio | currency:'USD':'symbol'}}</p>
+<p><b>DecimalPipe:</b> {{valorDecimal | number:'1.2-2'}}</p>

@@ -9,40 +9,45 @@
 <button (click)="cambiarRedirigir()">Cambiar</button>
 
 @if (redirigir) {
-<p>¡El enlace funciona correctamente!</p>
+  <p>¡El enlace funciona correctamente!</p>
 } @else {
-<p>Lo sentimos el enlace no está disponible</p>
+  <p>Lo sentimos, el enlace no está disponible</p>
 }
 
 <h2>Estado Préstamos</h2>
 
 <ul>
   @for (prestamo of prestamosList; track $index) {
-  <li>
-    {{prestamo.monto}} -
-    <span [ngClass]="{
-            'aprobado': prestamo.estado === 'Aprobado',
-            'pendiente': prestamo.estado === 'Pendiente'
-      }">
-      {{prestamo.estado}}
-    </span>
-  </li>
+    <li>
+      <b>Monto:</b> {{prestamo.monto | currency:'USD':'symbol':'1.0-0'}} -
+      <b>Estado:</b>
+      <span [ngClass]="{
+              'aprobado': prestamo.estado === 'Aprobado',
+              'pendiente': prestamo.estado === 'Pendiente'
+        }">
+        {{prestamo.estado | uppercase}}
+      </span>
+      <br>
+      <b>Fecha:</b> {{prestamo.fecha | date:'longDate'}}
+    </li>
   }
 </ul>
-
 
 <h2>Detalles del Préstamo</h2>
 @switch (prestamo.tipo) {
   @case (TipoPrestamo.Personal) {
-    <p>Préstamo de tipo Personal</p>
+    <p>Préstamo de tipo <b>{{prestamo.tipo | titlecase}}</b></p>
   }
   @case (TipoPrestamo.Hipotecario) {
-    <p>Préstamo de tipo Hipotecario</p>
+    <p>Préstamo de tipo <b>{{prestamo.tipo | titlecase}}</b></p>
   }
   @case (TipoPrestamo.Vehicular) {
-    <p>Préstamo de tipo Vehicular</p>
+    <p>Préstamo de tipo <b>{{prestamo.tipo | titlecase}}</b></p>
   }
   @default {
     <p>Préstamo no reconocido</p>
   }
 }
+
+<h3>Información adicional</h3>
+<p>Interés aplicado: {{prestamo.interes | percent:'1.1-2'}}</p>
