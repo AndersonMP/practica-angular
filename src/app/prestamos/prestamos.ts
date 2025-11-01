@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule, CurrencyPipe, PercentPipe, DatePipe, UpperCasePipe, TitleCasePipe } from "@angular/common";
+import { cambiaLetrasASCI } from '../pipes/cambiarLetraASCI';
 
 enum TipoPrestamo {
   Personal = 'Personal',
@@ -16,7 +17,7 @@ interface Prestamo {
 @Component({
   selector: 'app-prestamos',
   standalone: true,
-  imports: [CommonModule, CurrencyPipe, PercentPipe, DatePipe, UpperCasePipe, TitleCasePipe],
+  imports: [cambiaLetrasASCI,CommonModule, CurrencyPipe, PercentPipe, DatePipe, UpperCasePipe, TitleCasePipe],
   templateUrl: './prestamos.html',
   styleUrl: './prestamos.css',
 })
@@ -39,6 +40,8 @@ export class Prestamos {
     tipo: TipoPrestamo.Vehicular,
     interes: 0.125,
   };
+
+  fecha = new Date(2030, 12, 25);
 
   cambiarRedirigir() {
     this.redirigir = !this.redirigir;

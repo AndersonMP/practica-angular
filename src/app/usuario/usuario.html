@@ -7,9 +7,9 @@
 <button (click)="cambiarRedireccion()">Cambiar</button>
 
 @if (redirigir) {
-  <p>El enlace a {{web}} es correcto !!</p>
+<p>El enlace a {{web}} es correcto !!</p>
 } @else {
-  <p>El enlace no va a funcionar</p>
+<p>El enlace no va a funcionar</p>
 }
 
 <h3>Marcas Autos</h3>
@@ -19,22 +19,22 @@
   contador = $count,
   par = $even,
   impar = $odd) {
-    <li>{{marca.nombre | uppercase}} (Índice: {{indice}})</li>
+  <li>{{marca.nombre | uppercase}} (Índice: {{indice}})</li>
   } @empty {
-    <li>El listado está vacío.</li>
+  <li>El listado está vacío.</li>
   }
 </ul>
 
 @switch (usuario.rol) {
-  @case ("admin") {
-    <app-ventas></app-ventas>
-  }
-  @case ("user") {
-    <p>Eres un usuario normal</p>
-  }
-  @default {
-    <p>Eres un invitado</p>
-  }
+@case ("admin") {
+<app-ventas></app-ventas>
+}
+@case ("user") {
+<p>Eres un usuario normal</p>
+}
+@default {
+<p>Eres un invitado</p>
+}
 }
 
 <h3>Más cosas de las plantillas Angular</h3>
@@ -54,3 +54,4 @@
 <p><b>DatePipe:</b> {{ hoy | date:'fullDate' }}</p>
 <p><b>CurrencyPipe:</b> {{precio | currency:'USD':'symbol'}}</p>
 <p><b>DecimalPipe:</b> {{valorDecimal | number:'1.2-2'}}</p>
+<p>{{" El cielo está enladrillado, quien los desenladrillará" | cambiaLetras}}</p>
