@@ -29,3 +29,20 @@
   </li>
   }
 </ul>
+
+
+<h2>Detalles del Préstamo</h2>
+@switch (prestamo.tipo) {
+  @case (TipoPrestamo.Personal) {
+    <p>Préstamo de tipo Personal</p>
+  }
+  @case (TipoPrestamo.Hipotecario) {
+    <p>Préstamo de tipo Hipotecario</p>
+  }
+  @case (TipoPrestamo.Vehicular) {
+    <p>Préstamo de tipo Vehicular</p>
+  }
+  @default {
+    <p>Préstamo no reconocido</p>
+  }
+}
