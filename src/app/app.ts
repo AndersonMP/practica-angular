@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { Prestamos } from './prestamos/prestamos';
+// import { Ventas } from './ventas/ventas';
 // import { Producto } from "./producto/producto";
 // import {MiPerfil} from './mi-perfil/mi-perfil';
 // import { Usuario } from './usuario/usuario';
