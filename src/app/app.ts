@@ -1,10 +1,14 @@
 import { Component, signal } from '@angular/core';
-import { Producto } from "./producto/producto";
-import {MiPerfil} from './mi-perfil/mi-perfil';
+import { Prestamos } from './prestamos/prestamos';
+// import { Producto } from "./producto/producto";
+// import {MiPerfil} from './mi-perfil/mi-perfil';
+// import { Usuario } from './usuario/usuario';
+
 
 @Component({
   selector: 'app-root',
-  imports: [Producto, MiPerfil],
+  // imports: [Producto, MiPerfil, Usuario],
+  imports: [Prestamos],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

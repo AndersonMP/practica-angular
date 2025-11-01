@@ -1,0 +1,27 @@
+a {
+    background-color: orange;
+    color: black;
+    padding: 15px;
+}
+
+.activo {
+    background-color: blue;
+    color: white;
+    padding: 15px;
+}
+
+.grande {
+  font-size: 30px;
+  border: 2px solid #333;
+  border-radius: 12px;
+  padding: 10px;
+  display: inline-block;
+}
+
+.pequeno {
+  font-size: 16px;
+  border: 2px solid #333;
+  border-radius: 12px;
+  padding: 10px;
+  display: inline-block;
+}

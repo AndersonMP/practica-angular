@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './usuario.css',
 })
 export class Usuario {
+  web = "https://amazon.com";
+  redirigir = false;
 
+  cambiarRedireccion(){
+    this.redirigir = !this.redirigir; 
+  }
 }

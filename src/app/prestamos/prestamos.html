@@ -1,1 +1,19 @@
-<p>prestamos works!</p>
+<h1>Préstamos</h1>
+
+<p>
+  <a [href]="web"
+     [class.activo]="redirigir"
+     [ngClass]="redirigir ? 'grande' : 'pequeno'"
+     target="_blank">
+    Ir a mi web
+  </a>
+</p>
+
+<button (click)="cambiarRedirigir()">Cambiar</button>
+
+@if (redirigir) {
+<p>¡El enlace funciona correctamente!</p>
+} @else {
+<p>Lo sentimos el enlace no está disponible</p>
+}
+
