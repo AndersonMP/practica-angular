@@ -1,4 +1,9 @@
 <h1>Directivas Angular</h1>
+
 <h2 [ngClass]="colorear ? 'resaltar' : 'destacarMenos' ">Soy un programador</h2>
+
+<h2 [ngStyle]="mostrar === 'sí' ? {'background-color': 'green'} : {'background-color': 'red'}">Soy un estudiante</h2>
+
+<p [ngStyle]="misEstilos">Párrafo de Prueba</p>
 
 <app-pelicula></app-pelicula>

@@ -1,7 +1,17 @@
 <h1>Préstamos</h1>
 
 <p>
-  <a [href]="web" [class.activo]="redirigir" [ngClass]="redirigir ? 'grande' : 'pequeno'" target="_blank">
+  <a 
+    [href]="web"
+    [class.activo]="redirigir"
+    [ngClass]="redirigir ? 'grande' : 'pequeno'"
+    [ngStyle]="{
+      'color': redirigir ? 'green' : 'gray',
+      'font-size': redirigir ? '20px' : '14px',
+      'text-decoration': redirigir ? 'underline' : 'none'
+    }"
+    target="_blank"
+  >
     Ir a mi web
   </a>
 </p>
