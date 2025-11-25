@@ -1,7 +1,26 @@
-<hr/>
+<hr />
 <h1>{{titulo}}</h1>
 <ol>
     @for (pelicula of peliculas; track pelicula.id) {
-        <li>{{pelicula.titulo}} - {{pelicula.genero}} - {{pelicula.plataforma}}</li>
+    <li>{{pelicula.titulo}} - {{pelicula.genero}} - {{pelicula.plataforma}}</li>
+    }
+</ol>
+
+
+<h2>Formulario y Two Way Data Binding</h2>
+<input type="text" [(ngModel)]="miPelicula" />
+
+<button (click)="showPelicula()">Mostrar Película</button>
+
+<button (click)="addPelicula()">Añadir Nueva Película</button>
+<p>
+    Mi pélicula es:
+    <strong>{{miPelicula}}</strong>
+</p>
+
+<h3>Listado simple de películas</h3>
+<ol>
+    @for (pelicula of peliculaNueva; track $index) {
+    <li>{{pelicula}}</li>
     }
 </ol>

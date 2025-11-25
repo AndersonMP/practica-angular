@@ -1,14 +1,22 @@
 <h1>Transacciones</h1>
 
+<input type="text" [(ngModel)]="descripcionTransaccion" placeholder="Escribe una transacción" />
+
+<br />
+
+<button (click)="showTransaction()">Mostrar Transacción</button>
+
+<br /><br />
+
+<p>Mi transacción es: {{ descripcionTransaccion }}</p>
+
 <ol>
   @for (transaccion of transacciones; track transaccion.id) {
-    <li 
-      [ngClass]="{
+  <li [ngClass]="{
         ingreso: transaccion.tipo === 'ingreso',
         egreso: transaccion.tipo === 'egreso'
-      }"
-    >
-      {{ transaccion.fecha }} - {{ transaccion.descripcion }} - {{ transaccion.monto }}
-    </li>
+      }">
+    {{ transaccion.fecha }} - {{ transaccion.descripcion }} - {{ transaccion.monto }}
+  </li>
   }
 </ol>

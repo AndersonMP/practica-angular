@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { config } from './models/config';
+// import { Cine } from './components/cine/cine';
 import { Cuenta } from './components/cuenta/cuenta';
 
 

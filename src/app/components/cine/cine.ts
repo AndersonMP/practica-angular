@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import { Pelicula } from '../../models/Pelicula';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-cine',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './cine.html',
   styleUrl: './cine.css',
 })
 export class Cine {
   public titulo: string;
   public peliculas: Array<Pelicula>;
+  public miPelicula: string = "";
+  public peliculaNueva: string[] = [];
 
   constructor() {
     this.titulo = "Modelos";
@@ -30,6 +33,22 @@ export class Cine {
   ngOnInit() {
     console.log(this.peliculas)
     this.peliculas[1].titulo = "El Rey León (Remake)"
+  }
+
+  ngDoCheck() {
+    console.log(this.miPelicula);
+  }
+
+  showPelicula() {
+    alert(this.miPelicula);
+  }
+
+  addPelicula() {
+    // this.peliculaNueva.push(this.miPelicula);
+    let identificador = this.peliculas[this.peliculas.length - 1].id + 1;
+    let nuevaPelicula = new Pelicula(identificador, this.miPelicula);
+    console.log(nuevaPelicula);
+    this.peliculas.push(nuevaPelicula);
   }
 
 }
