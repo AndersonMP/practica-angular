@@ -11,3 +11,25 @@
     padding: 6px;
     font-family: 'Courier New', Courier, monospace;
 }
+
+.activarLink {
+    background-color: aquamarine;
+    color: black;
+}
+
+.normal {
+    color: #444;
+    background-color: transparent;
+    transition: 0.2s;
+}
+
+.normal:hover {
+    color: #1a73e8;
+}
+
+.activo {
+    background-color: #1a73e8;
+    color: white;
+    border-radius: 4px;
+    padding: 4px 8px;
+}

@@ -3,10 +3,38 @@
 <p>Bases y fundamentos de Angular</p>
 
 <!-- <mi-producto></mi-producto> -->
-<mi-perfil></mi-perfil>
+<!-- <mi-perfil></mi-perfil> -->
 <!-- <app-usuario></app-usuario> -->
 <!-- <app-prestamos></app-prestamos> -->
 <!-- <app-ventas></app-ventas> -->
 <!-- <app-cine></app-cine> -->
 <!-- <app-cuenta></app-cuenta> -->
 <!-- <app-padre></app-padre> -->
+
+<hr>
+<a routerLink="/inicio" routerLinkActive="activo" class="normal">Inicio</a>&nbsp;
+<a routerLink="/cuenta" routerLinkActive="activo" class="normal">Cuenta</a>&nbsp;
+<a routerLink="/transacciones" routerLinkActive="activo" class="normal">Transacciones</a>&nbsp;
+<a routerLink="/prestamos" routerLinkActive="activo" class="normal">Préstamos</a>&nbsp;
+
+<a routerLink="/componentes" routerLinkActive="activarLink" class="normal">Componentes</a>&nbsp;
+<a routerLink="/ciclos" routerLinkActive="activarLink" class="normal">Hooks</a>&nbsp;
+<a routerLink="/plantillas" routerLinkActive="activarLink" class="normal">Plantillas</a>&nbsp;
+<a routerLink="/directivas" routerLinkActive="activarLink" class="normal">Directivas</a>&nbsp;
+<a routerLink="/modelos" routerLinkActive="activarLink" class="normal">Modelos</a>&nbsp;
+<a routerLink="/comunicacion" routerLinkActive="activarLink" class="normal">Comunicación</a>&nbsp;
+
+<!-- Usar está sintaxis con Stand Alone Components y quitar RouterLinkWithHref
+<a [routerLink]="'/componentes'" routerLinkActive="activarLink">Componentes</a>
+<a [routerLink]="'/ciclos'" routerLinkActive="activarLink">Hooks</a>
+<a [routerLink]="'/plantillas'" routerLinkActive="activarLink">Plantillas</a>
+<a [routerLink]="'/directivas'" routerLinkActive="activarLink">Directivas</a>
+<a [routerLink]="'/modelos'" routerLinkActive="activarLink">Modelos</a>
+<a [routerLink]="'/comunicacion'" routerLinkActive="activarLink">Comunicación</a> 
+-->
+
+<hr>
+
+<router-outlet>
+    <!--Aquí va el componente vinculado a la ruta actual-->
+</router-outlet>

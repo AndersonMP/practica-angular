@@ -1,5 +1,5 @@
-import { Component} from '@angular/core';
-import {Pelicula} from '../pelicula/pelicula';
+import { Component } from '@angular/core';
+import { Pelicula } from '../pelicula/pelicula';
 
 
 @Component(
@@ -11,16 +11,16 @@ import {Pelicula} from '../pelicula/pelicula';
     }
 )
 
-export class Producto{
+export class Producto {
 
     public nombre: string;
     public marca: string;
     public precio: number;
     public descipcion: string;
     public mostrarPelicula: boolean = true;
-    
 
-    constructor(){
+
+    constructor() {
         this.nombre = "PC Portátil";
         this.marca = "Asus";
         this.precio = 457;
@@ -28,27 +28,27 @@ export class Producto{
         console.log("Componente producto cargado correctamente");
     }
 
-    cambiarNombre(){
+    cambiarNombre() {
         this.nombre = "Asus ROG Strix"
     }
 
-    ocultarComponentePelicula(){
+    ocultarComponentePelicula() {
         this.mostrarPelicula = false;
     }
 
-    mostrarComponentePelicula(){
+    mostrarComponentePelicula() {
         this.mostrarPelicula = true;
     }
-    
-    ngOnInit(){
+
+    ngOnInit() {
         console.log("El componente está inicializado.")
     }
 
-    ngDoCheck(){
+    ngDoCheck() {
         console.log("Componente actualizdo.")
     }
 
-    ngAfterViewInit(){
+    ngAfterViewInit() {
         console.log("La vista está cargada.")
     }
 
