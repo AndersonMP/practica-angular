@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Pelicula } from '../../models/Pelicula';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cine',
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './cine.html',
   styleUrl: './cine.css',
 })
@@ -13,6 +14,7 @@ export class Cine {
   public peliculas: Array<Pelicula>;
   public miPelicula: string = "";
   public peliculaNueva: string[] = [];
+  public color: string = "#FFF";
 
   constructor() {
     this.titulo = "Modelos";
@@ -35,9 +37,9 @@ export class Cine {
     this.peliculas[1].titulo = "El Rey León (Remake)"
   }
 
-  ngDoCheck() {
-    console.log(this.miPelicula);
-  }
+  // ngDoCheck() {
+  //   console.log(this.miPelicula);
+  // }
 
   showPelicula() {
     alert(this.miPelicula);
@@ -49,6 +51,22 @@ export class Cine {
     let nuevaPelicula = new Pelicula(identificador, this.miPelicula);
     console.log(nuevaPelicula);
     this.peliculas.push(nuevaPelicula);
+  }
+
+  deletePelicula(index: number){
+    this.peliculas.splice(index, 1)
+  }
+
+  haciendoFoco(){
+    console.warn("Estás dentro del input de película.")
+  }
+
+  saliendoDelFoco(){
+    console.warn("Estás fuera del input de película.")
+  }
+
+  pulsandoTeclas(event: KeyboardEvent){
+    console.info("Estás pulsando la tecla: ", event.key)
   }
 
 }

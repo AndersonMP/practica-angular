@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Transaccion } from '../../models/Transaccion';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 export class Transacciones {
   public transacciones: Array<Transaccion>;
   public descripcionTransaccion: string = "";
+  @Output() mensajeEnviado: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() {
     this.transacciones = [
@@ -28,7 +29,11 @@ export class Transacciones {
     console.log("Transacción:", this.descripcionTransaccion);
   }
 
-  ngDoCheck(){
+  enviarSaludo(){
+    this.mensajeEnviado.emit("¡Hola desde el componente de transacciones!");
+  }
+
+  ngDoCheck() {
     console.log(this.descripcionTransaccion);
   }
 

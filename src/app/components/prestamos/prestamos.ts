@@ -18,7 +18,7 @@ interface Prestamo {
 @Component({
   selector: 'app-prestamos',
   standalone: true,
-  imports: [cambiaLetrasASCI,CommonModule, CurrencyPipe, PercentPipe, DatePipe, UpperCasePipe, TitleCasePipe],
+  imports: [cambiaLetrasASCI, CommonModule, CurrencyPipe, PercentPipe, DatePipe, UpperCasePipe, TitleCasePipe],
   templateUrl: './prestamos.html',
   styleUrl: './prestamos.css',
 })
@@ -46,5 +46,23 @@ export class Prestamos {
 
   cambiarRedirigir() {
     this.redirigir = !this.redirigir;
+  }
+
+  agregarPrestamo(){
+    let ultimoId = this.prestamosList[this.prestamosList.length -1].id;
+    let nuevoId = ultimoId + 1;
+
+    const nuevoPrestamo = {
+      id: nuevoId,
+      monto: Math.floor(Math.random() * 5000) + 500,
+      estado: Math.random() > 0.5 ? 'Aprobado' : 'Pendiente',
+      fecha: new Date()
+    };
+
+    this.prestamosList.push(nuevoPrestamo);
+  }
+
+  eliminarPrestamo(index: number) {
+    this.prestamosList.splice(index, 1);
   }
 }
