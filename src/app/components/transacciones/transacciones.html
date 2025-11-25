@@ -1,0 +1,14 @@
+<h1>Transacciones</h1>
+
+<ol>
+  @for (transaccion of transacciones; track transaccion.id) {
+    <li 
+      [ngClass]="{
+        ingreso: transaccion.tipo === 'ingreso',
+        egreso: transaccion.tipo === 'egreso'
+      }"
+    >
+      {{ transaccion.fecha }} - {{ transaccion.descripcion }} - {{ transaccion.monto }}
+    </li>
+  }
+</ol>

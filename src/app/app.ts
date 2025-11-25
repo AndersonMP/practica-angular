@@ -1,18 +1,17 @@
 import { Component, signal } from '@angular/core';
-import { Prestamos } from './prestamos/prestamos';
-// import { Ventas } from './ventas/ventas';
-// import { Producto } from "./producto/producto";
-// import {MiPerfil} from './mi-perfil/mi-perfil';
-// import { Usuario } from './usuario/usuario';
+import { config } from './models/config';
+import { Cuenta } from './components/cuenta/cuenta';
 
 
 @Component({
   selector: 'app-root',
-  // imports: [Producto, MiPerfil, Usuario, Prestamos],
-  imports: [Prestamos],
+  // imports: [Producto, MiPerfil, Usuario, Prestamos, Cine],
+  imports: [Cuenta],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   protected readonly title = signal('Angular.');
+  titulo = config.title;
+  descripcion = config.description;
 }

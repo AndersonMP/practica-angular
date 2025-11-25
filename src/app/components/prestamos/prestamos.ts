@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule, CurrencyPipe, PercentPipe, DatePipe, UpperCasePipe, TitleCasePipe } from "@angular/common";
-import { cambiaLetrasASCI } from '../pipes/cambiarLetraASCI';
+import { cambiaLetrasASCI } from '../../pipes/cambiarLetraASCI';
+
 
 enum TipoPrestamo {
   Personal = 'Personal',

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { UpperCasePipe, LowerCasePipe, DatePipe, TitleCasePipe, CurrencyPipe, DecimalPipe } from '@angular/common';
 import { Ventas } from '../ventas/ventas';
-import { cambiaLetras } from '../pipes/cambiaLetras';
+import { cambiaLetras } from '../../pipes/cambiaLetras';
 
 @Component({
   selector: 'app-usuario',
